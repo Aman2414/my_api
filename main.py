@@ -9,7 +9,11 @@ code = ''
 baseURl = 'http://127.0.0.1:5000'
 
 
-# authorize function will return login page if user is not login, so we have to load html code in web view and when user logins it will redirect to saveToken Function and function will save the Token
+@app.route('/', methods=['GET', 'POST'])
+def welcome():
+    return "Welcome to Jarvis API"
+
+
 @app.route('/authorize', methods=['GET', 'POST'])
 def authorize():
     # authorizeUrl = f"https://accounts.spotify.com/authorize?response_type=code&client_id={clientId}&redirect_uri={baseURl + '/saveToken'} "
